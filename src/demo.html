@@ -46,8 +46,9 @@
             </div>
 
             <!-- COMPLETE -->
-            <hr class="h-auto border bg-black" />
+            <hr id="hr" class="h-auto border bg-black" />
             <div
+                id="completed-card"
                 class="relative my-8 flex w-80 shrink-0 -translate-y-4 flex-col rounded-lg border-4 border-green-600 px-8 py-4"
             >
                 <span
@@ -83,5 +84,27 @@
                 </div>
             </div>
         </div>
+
+        <!-- Toggle checkbox -->
+        <div class="absolute bottom-20 left-0 right-0 flex items-center justify-center">
+            <label for="card" class="select-none text-2xl">Show Completed Card</label>
+            <input id="card" type="checkbox" checked class="m-8 h-8 w-8" />
+        </div>
+
+        <script>
+            const card = document.querySelector("#card");
+            const cardCompleted = document.querySelector("#completed-card");
+            const hr = document.querySelector("#hr");
+
+            card.addEventListener("click", e => {
+                if (e.target.checked) {
+                    cardCompleted.classList.remove("hidden");
+                    hr.classList.remove("hidden");
+                } else {
+                    cardCompleted.classList.add("hidden");
+                    hr.classList.add("hidden");
+                }
+            });
+        </script>
     </body>
 </html>
