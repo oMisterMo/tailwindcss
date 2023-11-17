@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============== AFTER IMPORTS =============== */
+/*  theme(): Gives you access to all of your design tokens from your tailwind.config.js file directly in your CSS */
+/* .mo {
+    background-color: theme("colors.blue.200");
+} */
